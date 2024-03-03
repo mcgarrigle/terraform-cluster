@@ -1,5 +1,31 @@
-# Instructions:
+# Terraform Cluster
 
+Target deployment:
+
+From the VM ``dev`` use terrfrom to deploy 4 ``server`` VMs over 2 servers,
+``smol`` and ``swole``.
+
+```
+ ┌─────────────────────────────────┐     ┌─────────────────────────────────┐
+ │              smol               │     │              swole              │
+ │                                 │     │                                 │
+ │  ┌─────────┐     ┌─────────┐    │     │  ┌─────────┐     ┌─────────┐    │
+ │  │ server1 │     │ server2 │    │     │  │ server3 │     │ server4 │    │
+ │  └─────────┘     └─────────┘    │     │  └─────────┘     └─────────┘    │
+ └────────────────┬────────────────┘     └────────────────┬────────────────┘
+                  │                                       │                 
+                  │                                       │                 
+──────────────────┴─────────────────┬─────────────────────┴─────────────────
+                                    │                                       
+                                    │                                       
+                   ┌────────────────┴────────────────┐                      
+                   │               dev               │                      
+                   │                                 │                      
+                   │                                 │                      
+                   │                                 │                      
+                   │                                 │                      
+                   └─────────────────────────────────┘
+```
 ## Install terraform
 ```
 wget https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip
@@ -10,7 +36,6 @@ rm terraform_1.6.6_linux_amd64.zip
 ```
 cd modules
 git clone https://github.com/mcgarrigle/terraform-module-libvirt-domain.git
-cd -
 ```
 ## Download and verify base image
 ```

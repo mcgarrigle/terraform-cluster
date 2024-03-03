@@ -42,3 +42,8 @@ variable "storage_pool" {
   type    = string
   default = "filesystems"
 }
+
+variable "base_image" {
+  type    = string
+  default = "rocky-base-9.3"
+}

@@ -34,7 +34,7 @@ module "libvirt_domain_smol" {
   ip_address           = "${each.value.ip_address}"
   gateway_address      = "192.168.1.254"
   dns_server           = "1.1.1.1"
-  base_volume_name     = "rocky-base-9.2"
+  base_volume_name     = var.base_image
   base_volume_size     = "${each.value.base_volume_size}"
   cloud_init_user_data = file("${path.module}/cloud-init/user-data")
 }
@@ -54,7 +54,7 @@ module "libvirt_domain_swole" {
   ip_address           = "${each.value.ip_address}"
   gateway_address      = "192.168.1.254"
   dns_server           = "1.1.1.1"
-  base_volume_name     = "rocky-base-9.2"
+  base_volume_name     = var.base_image
   base_volume_size     = "${each.value.base_volume_size}"
   cloud_init_user_data = file("${path.module}/cloud-init/user-data")
 }
