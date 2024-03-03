@@ -6,3 +6,4 @@ modules/*
 !modules/.empty
 *.qcow
 *.qcow2
+*.CHECKSUM
